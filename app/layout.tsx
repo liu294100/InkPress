@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
-import { Metadata } from 'next'
+// 已在文件顶部导入 Metadata，此处删除重复导入
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })

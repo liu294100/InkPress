@@ -22,6 +22,16 @@ const nextConfig = {
         ...config.resolve.fallback,
         fs: false,
         path: false,
+        'mock-aws-s3': false,
+        'aws-sdk': false,
+        'nock': false,
+      };
+      
+      // 完全排除nodejieba及其依赖在客户端构建
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        'nodejieba': false,
+        '@mapbox/node-pre-gyp': false,
       };
     }
     return config;

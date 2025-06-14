@@ -5,9 +5,10 @@ const isBrowser = typeof window !== 'undefined'
 
 // 动态导入 nodejieba（仅在 Node.js 环境中）
 let nodejieba: any = null
-if (!isBrowser) {
+if (!isBrowser && typeof require !== 'undefined') {
   try {
-    nodejieba = require('nodejieba')
+    // 只在服务器端且require可用时导入
+    nodejieba = eval('require')('nodejieba')
   } catch (error) {
     console.warn('nodejieba not available, falling back to simple tokenization')
   }
@@ -83,9 +84,6 @@ export function createSearchIndex(posts: SearchablePost[]): SearchIndex {
   const index = new FlexSearch.Index({
     tokenize: (text: string) => tokenize(text),
     resolution: 9,
-    depth: 4,
-    bidirectional: true,
-    suggest: true,
   })
 
   // 为每个文章创建搜索文档

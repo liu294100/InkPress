@@ -91,9 +91,15 @@ async function processMarkdownFile(filePath) {
     const { data: frontmatter, content } = matter(fileContent)
     
     // Process markdown to HTML
-    const processedContent = await remark()
-      .use(remarkHtml)
-      .process(content)
+    let processedContent
+    try {
+      processedContent = await remark()
+        .use(remarkHtml)
+        .process(content)
+    } catch (error) {
+      console.warn(`Failed to process markdown for ${filePath}, using plain content:`, error.message)
+      processedContent = { toString: () => content }
+    }
     
     const htmlContent = processedContent.toString()
     const plainContent = stripHtml.stripHtml(htmlContent).result
