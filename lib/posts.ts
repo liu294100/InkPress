@@ -257,6 +257,51 @@ export async function getCategories(): Promise<Category[]> {
   return categories
 }
 
+export async function getAllCategories(): Promise<Array<Category & { latestPost?: { title: string; date: string } }>> {
+  const posts = await getAllPosts()
+  const categoryMap = new Map<string, { count: number; posts: Post[] }>()
+
+  // Count posts per category
+  for (const post of posts) {
+    const existing = categoryMap.get(post.category)
+    if (existing) {
+      existing.count++
+      existing.posts.push(post)
+    } else {
+      categoryMap.set(post.category, { count: 1, posts: [post] })
+    }
+  }
+
+  // Convert to category objects with latest post
+  const categories: Array<Category & { latestPost?: { title: string; date: string } }> = []
+  for (const [slug, { count, posts }] of categoryMap) {
+    // Sort posts by date to get the latest
+    const sortedPosts = posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    const latestPost = sortedPosts[0]
+    
+    categories.push({
+      name: getCategoryName(slug),
+      slug,
+      count,
+      description: `Explore ${getCategoryName(slug).toLowerCase()} articles and insights`,
+      latestPost: latestPost ? {
+        title: latestPost.title,
+        date: latestPost.date
+      } : undefined
+    })
+  }
+
+  // Sort by count (descending) then by name
+  categories.sort((a, b) => {
+    if (b.count !== a.count) {
+      return b.count - a.count
+    }
+    return a.name.localeCompare(b.name)
+  })
+
+  return categories
+}
+
 export async function getRecentPosts(limit: number = 5): Promise<Post[]> {
   const posts = await getAllPosts()
   return posts.slice(0, limit)
