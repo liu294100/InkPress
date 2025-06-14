@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义样式 */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-gray-900 bg-gray-50;
+  }
+}
+
+@layer components {
+  /* 搜索高亮样式 */
+  .search-highlight {
+    @apply bg-yellow-200 px-1 rounded;
+  }
+  
+  /* 代码块样式 */
+  .prose pre {
+    @apply bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto;
+  }
+  
+  .prose code {
+    @apply bg-gray-100 text-gray-800 px-1 py-0.5 rounded text-sm;
+  }
+  
+  .prose pre code {
+    @apply bg-transparent text-gray-100 p-0;
+  }
+  
+  /* 目录样式 */
+  .toc {
+    @apply bg-white border border-gray-200 rounded-lg p-4 sticky top-4;
+  }
+  
+  .toc ul {
+    @apply list-none pl-0;
+  }
+  
+  .toc li {
+    @apply py-1;
+  }
+  
+  .toc a {
+    @apply text-gray-600 hover:text-blue-600 transition-colors duration-200 no-underline;
+  }
+  
+  .toc .toc-level-2 {
+    @apply pl-4;
+  }
+  
+  .toc .toc-level-3 {
+    @apply pl-8;
+  }
+  
+  .toc .toc-level-4 {
+    @apply pl-12;
+  }
+  
+  /* 响应式设计 */
+  @media (max-width: 768px) {
+    .toc {
+      @apply static mb-6;
+    }
+  }
+  
+  /* 加载动画 */
+  .loading-spinner {
+    @apply animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600;
+  }
+  
+  /* 卡片悬停效果 */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+}
+
+/* 语法高亮主题 */
+.hljs {
+  background: #1f2937 !important;
+  color: #f9fafb !important;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #6b7280 !important;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #ec4899 !important;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #f59e0b !important;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #10b981 !important;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #3b82f6 !important;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #8b5cf6 !important;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #ef4444 !important;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #06b6d4 !important;
+}

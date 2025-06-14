@@ -1,0 +1,118 @@
+{
+  "common": {
+    "home": "首页",
+    "search": "搜索",
+    "allPosts": "所有文章",
+    "categories": "分类",
+    "tags": "标签",
+    "readMore": "阅读更多",
+    "readingTime": "分钟阅读",
+    "author": "作者",
+    "publishedOn": "发布于",
+    "lastUpdated": "最后更新",
+    "tableOfContents": "目录",
+    "share": "分享",
+    "language": "语言",
+    "loading": "加载中...",
+    "noResults": "未找到结果",
+    "searchPlaceholder": "搜索文章...",
+    "clearSearch": "清除搜索"
+  },
+  "navigation": {
+    "home": "首页",
+    "posts": "文章",
+    "search": "搜索",
+    "about": "关于"
+  },
+  "footer": {
+    "description": "一个现代化的博客平台，专注于技术、设计和生活分享。",
+    "quickLinks": "快速链接",
+    "categories": "分类",
+    "copyright": "© 2024 InkPress. 保留所有权利。",
+    "builtWith": "构建于",
+    "poweredBy": "由 Next.js 驱动",
+    "socialMedia": "关注我们",
+    "links": {
+      "privacy": "隐私政策",
+      "terms": "服务条款",
+      "contact": "联系我们"
+    }
+  },
+  "search": {
+    "title": "搜索文章",
+    "placeholder": "输入关键词搜索...",
+    "results": "搜索结果",
+    "noResults": "没有找到匹配的文章。",
+    "suggestions": "搜索建议",
+    "recent": "最近搜索"
+  },
+  "posts": {
+    "allPosts": "所有文章",
+    "allPostsDescription": "浏览我们的所有文章，涵盖技术、设计和生活等各个方面。",
+    "notFound": "文章未找到",
+    "readingTime": "分钟阅读",
+    "by": "作者：",
+    "previous": "上一篇",
+    "relatedPosts": "相关文章"
+  },
+  "categories": {
+    "title": "分类",
+    "tech": "技术",
+    "design": "设计",
+    "life": "生活",
+    "dev": "开发"
+  },
+  "post": {
+    "relatedPosts": "相关文章",
+    "previousPost": "上一篇",
+    "nextPost": "下一篇",
+    "backToTop": "回到顶部",
+    "shareArticle": "分享这篇文章"
+  },
+  "categories": {
+    "title": "分类",
+    "tech": "技术",
+    "design": "设计",
+    "life": "生活",
+    "dev": "开发"
+  },
+  "category": {
+    "title": "分类：{name}",
+    "description": "{name} 分类下的文章",
+    "allCategories": "所有分类",
+    "postsCount": "{count} 篇文章"
+  },
+  "share": {
+    "title": "分享这篇文章",
+    "share": "分享",
+    "copyLink": "复制链接",
+    "linkCopied": "链接已复制到剪贴板！",
+    "platforms": {
+      "facebook": "分享到 Facebook",
+      "twitter": "分享到 Twitter",
+      "linkedin": "分享到 LinkedIn",
+      "reddit": "分享到 Reddit",
+      "whatsapp": "分享到 WhatsApp",
+      "telegram": "分享到 Telegram",
+      "wechat": "分享到微信",
+      "weibo": "分享到微博",
+      "line": "分享到 LINE",
+      "pinterest": "分享到 Pinterest",
+      "tumblr": "分享到 Tumblr",
+      "vk": "分享到 VK",
+      "instagram": "分享到 Instagram"
+    }
+  },
+  "errors": {
+    "404": {
+      "title": "页面未找到",
+      "description": "您要查找的页面不存在。",
+      "backHome": "返回首页"
+    },
+    "500": {
+      "title": "服务器错误",
+      "description": "服务器出现了问题。",
+      "retry": "重试"
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "common": {
+    "home": "홈",
+    "search": "검색",
+    "allPosts": "모든 게시물",
+    "categories": "카테고리",
+    "tags": "태그",
+    "readMore": "더 읽기",
+    "readingTime": "분 읽기",
+    "author": "작성자",
+    "publishedOn": "게시일",
+    "lastUpdated": "마지막 업데이트",
+    "tableOfContents": "목차",
+    "share": "공유",
+    "language": "언어",
+    "loading": "로딩 중...",
+    "noResults": "결과를 찾을 수 없습니다",
+    "searchPlaceholder": "게시물 검색...",
+    "clearSearch": "검색 지우기"
+  },
+  "navigation": {
+    "home": "홈",
+    "posts": "게시물",
+    "search": "검색",
+    "about": "소개"
+  },
+  "footer": {
+    "description": "기술, 디자인, 생활을 공유하는 현대적인 블로그 플랫폼입니다.",
+    "quickLinks": "빠른 링크",
+    "categories": "카테고리",
+    "copyright": "© 2024 InkPress. 모든 권리 보유.",
+    "builtWith": "구축",
+    "poweredBy": "Next.js로 구동",
+    "socialMedia": "팔로우하기",
+    "links": {
+      "privacy": "개인정보 보호정책",
+      "terms": "서비스 약관",
+      "contact": "연락처"
+    }
+  },
+  "search": {
+    "title": "게시물 검색",
+    "placeholder": "검색할 키워드를 입력하세요...",
+    "results": "검색 결과",
+    "noResults": "검색과 일치하는 게시물을 찾을 수 없습니다.",
+    "suggestions": "검색 제안",
+    "recent": "최근 검색"
+  },
+  "posts": {
+    "allPosts": "모든 게시물",
+    "allPostsDescription": "기술, 디자인, 생활 등 다양한 주제의 모든 게시물을 둘러보세요.",
+    "notFound": "게시물을 찾을 수 없습니다",
+    "readingTime": "분 읽기",
+    "by": "작성자:",
+    "previous": "이전 게시물",
+    "relatedPosts": "관련 게시물"
+  },
+  "categories": {
+    "title": "카테고리",
+    "tech": "기술",
+    "design": "디자인",
+    "life": "생활",
+    "dev": "개발"
+  },
+  "post": {
+    "relatedPosts": "관련 게시물",
+    "previousPost": "이전 게시물",
+    "nextPost": "다음 게시물",
+    "backToTop": "맨 위로",
+    "shareArticle": "이 게시물 공유"
+  },
+  "category": {
+    "title": "카테고리: {name}",
+    "description": "{name} 카테고리의 게시물",
+    "allCategories": "모든 카테고리",
+    "postsCount": "{count}개 게시물"
+  },
+  "share": {
+    "title": "이 게시물 공유",
+    "copyLink": "링크 복사",
+    "linkCopied": "링크가 클립보드에 복사되었습니다!",
+    "platforms": {
+      "facebook": "Facebook에서 공유",
+      "twitter": "Twitter에서 공유",
+      "linkedin": "LinkedIn에서 공유",
+      "reddit": "Reddit에서 공유",
+      "whatsapp": "WhatsApp에서 공유",
+      "telegram": "Telegram에서 공유",
+      "wechat": "WeChat에서 공유",
+      "weibo": "Weibo에서 공유",
+      "line": "LINE에서 공유",
+      "pinterest": "Pinterest에서 공유",
+      "tumblr": "Tumblr에서 공유",
+      "vk": "VK에서 공유",
+      "instagram": "Instagram에서 공유"
+    }
+  },
+  "errors": {
+    "404": {
+      "title": "페이지를 찾을 수 없습니다",
+      "description": "찾고 있는 페이지가 존재하지 않습니다.",
+      "backHome": "홈으로 돌아가기"
+    },
+    "500": {
+      "title": "서버 오류",
+      "description": "서버에서 문제가 발생했습니다.",
+      "retry": "다시 시도"
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "common": {
+    "home": "Accueil",
+    "search": "Rechercher",
+    "allPosts": "Tous les articles",
+    "categories": "Catégories",
+    "tags": "Étiquettes",
+    "readMore": "Lire la suite",
+    "readingTime": "min de lecture",
+    "author": "Auteur",
+    "publishedOn": "Publié le",
+    "lastUpdated": "Dernière mise à jour",
+    "tableOfContents": "Table des matières",
+    "share": "Partager",
+    "language": "Langue",
+    "loading": "Chargement...",
+    "noResults": "Aucun résultat trouvé",
+    "searchPlaceholder": "Rechercher des articles...",
+    "clearSearch": "Effacer la recherche"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "posts": "Articles",
+    "search": "Rechercher",
+    "about": "À propos"
+  },
+  "footer": {
+    "description": "Une plateforme de blog moderne axée sur le partage de technologie, design et vie.",
+    "quickLinks": "Liens rapides",
+    "categories": "Catégories",
+    "copyright": "© 2024 InkPress. Tous droits réservés.",
+    "builtWith": "Construit avec",
+    "poweredBy": "Propulsé par Next.js",
+    "socialMedia": "Suivez-nous",
+    "links": {
+      "privacy": "Politique de confidentialité",
+      "terms": "Conditions d'utilisation",
+      "contact": "Contact"
+    }
+  },
+  "search": {
+    "title": "Rechercher des articles",
+    "placeholder": "Entrez des mots-clés pour rechercher...",
+    "results": "Résultats de recherche",
+    "noResults": "Aucun article trouvé correspondant à votre recherche.",
+    "suggestions": "Suggestions de recherche",
+    "recent": "Recherches récentes"
+  },
+  "posts": {
+    "allPosts": "Tous les articles",
+    "allPostsDescription": "Parcourez tous nos articles couvrant la technologie, le design, la vie et plus encore.",
+    "notFound": "Article non trouvé",
+    "readingTime": "minutes de lecture",
+    "by": "Par :",
+    "previous": "Article précédent",
+    "relatedPosts": "Articles connexes"
+  },
+  "categories": {
+    "title": "Catégories",
+    "tech": "Technologie",
+    "design": "Design",
+    "life": "Vie",
+    "dev": "Développement"
+  },
+  "post": {
+    "relatedPosts": "Articles connexes",
+    "previousPost": "Article précédent",
+    "nextPost": "Article suivant",
+    "backToTop": "Retour en haut",
+    "shareArticle": "Partager cet article"
+  },
+  "category": {
+    "title": "Catégorie : {name}",
+    "description": "Articles dans la catégorie {name}",
+    "allCategories": "Toutes les catégories",
+    "postsCount": "{count} articles"
+  },
+  "share": {
+    "title": "Partager cet article",
+    "copyLink": "Copier le lien",
+    "linkCopied": "Lien copié dans le presse-papiers !",
+    "platforms": {
+      "facebook": "Partager sur Facebook",
+      "twitter": "Partager sur Twitter",
+      "linkedin": "Partager sur LinkedIn",
+      "reddit": "Partager sur Reddit",
+      "whatsapp": "Partager sur WhatsApp",
+      "telegram": "Partager sur Telegram",
+      "wechat": "Partager sur WeChat",
+      "weibo": "Partager sur Weibo",
+      "line": "Partager sur LINE",
+      "pinterest": "Partager sur Pinterest",
+      "tumblr": "Partager sur Tumblr",
+      "vk": "Partager sur VK",
+      "instagram": "Partager sur Instagram"
+    }
+  },
+  "errors": {
+    "404": {
+      "title": "Page non trouvée",
+      "description": "La page que vous recherchez n'existe pas.",
+      "backHome": "Retour à l'accueil"
+    },
+    "500": {
+      "title": "Erreur serveur",
+      "description": "Quelque chose s'est mal passé de notre côté.",
+      "retry": "Réessayer"
+    }
+  }
+}

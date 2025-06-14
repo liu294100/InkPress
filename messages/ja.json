@@ -1,0 +1,110 @@
+{
+  "common": {
+    "home": "ホーム",
+    "search": "検索",
+    "allPosts": "すべての記事",
+    "categories": "カテゴリ",
+    "tags": "タグ",
+    "readMore": "続きを読む",
+    "readingTime": "分で読める",
+    "author": "著者",
+    "publishedOn": "公開日",
+    "lastUpdated": "最終更新",
+    "tableOfContents": "目次",
+    "share": "シェア",
+    "language": "言語",
+    "loading": "読み込み中...",
+    "noResults": "結果が見つかりません",
+    "searchPlaceholder": "記事を検索...",
+    "clearSearch": "検索をクリア"
+  },
+  "navigation": {
+    "home": "ホーム",
+    "posts": "記事",
+    "search": "検索",
+    "about": "について"
+  },
+  "footer": {
+    "description": "技術、デザイン、ライフスタイルの共有に焦点を当てた現代的なブログプラットフォーム。",
+    "quickLinks": "クイックリンク",
+    "categories": "カテゴリ",
+    "copyright": "© 2024 InkPress. All rights reserved.",
+    "builtWith": "構築",
+    "poweredBy": "Next.js で動作",
+    "socialMedia": "フォローする",
+    "links": {
+      "privacy": "プライバシーポリシー",
+      "terms": "利用規約",
+      "contact": "お問い合わせ"
+    }
+  },
+  "search": {
+    "title": "記事を検索",
+    "placeholder": "検索キーワードを入力してください...",
+    "results": "検索結果",
+    "noResults": "検索に一致する記事が見つかりません。",
+    "suggestions": "検索候補",
+    "recent": "最近の検索"
+  },
+  "posts": {
+    "allPosts": "すべての記事",
+    "allPostsDescription": "技術、デザイン、ライフスタイルなど、様々なトピックの記事をご覧ください。",
+    "notFound": "記事が見つかりません",
+    "readingTime": "分で読める",
+    "by": "著者：",
+    "previous": "前の記事",
+    "relatedPosts": "関連記事"
+  },
+  "categories": {
+    "title": "カテゴリ",
+    "tech": "技術",
+    "design": "デザイン",
+    "life": "ライフスタイル",
+    "dev": "開発"
+  },
+  "post": {
+    "relatedPosts": "関連記事",
+    "previousPost": "前の記事",
+    "nextPost": "次の記事",
+    "backToTop": "トップに戻る",
+    "shareArticle": "この記事をシェア"
+  },
+  "category": {
+    "title": "カテゴリ：{name}",
+    "description": "{name} カテゴリの記事",
+    "allCategories": "すべてのカテゴリ",
+    "postsCount": "{count} 件の記事"
+  },
+  "share": {
+    "title": "この記事をシェア",
+    "copyLink": "リンクをコピー",
+    "linkCopied": "リンクがクリップボードにコピーされました！",
+    "platforms": {
+      "facebook": "Facebook でシェア",
+      "twitter": "Twitter でシェア",
+      "linkedin": "LinkedIn でシェア",
+      "reddit": "Reddit でシェア",
+      "whatsapp": "WhatsApp でシェア",
+      "telegram": "Telegram でシェア",
+      "wechat": "WeChat でシェア",
+      "weibo": "Weibo でシェア",
+      "line": "LINE でシェア",
+      "pinterest": "Pinterest でシェア",
+      "tumblr": "Tumblr でシェア",
+      "vk": "VK でシェア",
+      "instagram": "Instagram でシェア"
+    }
+  },
+  "errors": {
+    "404": {
+      "title": "ページが見つかりません",
+      "description": "お探しのページは存在しません。",
+      "backHome": "ホームに戻る"
+    },
+    "500": {
+      "title": "サーバーエラー",
+      "description": "サーバーで問題が発生しました。",
+      "retry": "再試行"
+    }
+  }
+}
