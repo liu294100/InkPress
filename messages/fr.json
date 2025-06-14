@@ -58,6 +58,11 @@
   },
   "categories": {
     "title": "Catégories",
+    "description": "Parcourez toutes les catégories d'articles et trouvez le contenu qui vous intéresse",
+    "latestPost": "Dernier Article",
+    "viewAllPosts": "Voir Tous les Articles",
+    "noCategories": "Aucune Catégorie",
+    "noCategoriesDescription": "Il n'y a pas encore de catégories d'articles.",
     "tech": "Technologie",
     "design": "Design",
     "life": "Vie",

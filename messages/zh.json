@@ -58,6 +58,11 @@
   },
   "categories": {
     "title": "分类",
+    "description": "浏览所有文章分类，找到您感兴趣的内容",
+    "latestPost": "最新文章",
+    "viewAllPosts": "查看所有文章",
+    "noCategories": "暂无分类",
+    "noCategoriesDescription": "目前还没有任何文章分类。",
     "tech": "技术",
     "design": "设计",
     "life": "生活",
@@ -69,13 +74,6 @@
     "nextPost": "下一篇",
     "backToTop": "回到顶部",
     "shareArticle": "分享这篇文章"
-  },
-  "categories": {
-    "title": "分类",
-    "tech": "技术",
-    "design": "设计",
-    "life": "生活",
-    "dev": "开发"
   },
   "category": {
     "title": "分类：{name}",

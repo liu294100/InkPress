@@ -32,12 +32,20 @@ export default getRequestConfig(async ({ locale }) => {
 // 获取用户首选语言
 export function getUserLocale(): Locale {
   if (typeof window !== 'undefined') {
+    // 优先从URL路径中获取当前语言
+    const pathname = window.location.pathname;
+    const segments = pathname.split('/').filter(Boolean);
+    if (segments.length > 0 && locales.includes(segments[0] as Locale)) {
+      return segments[0] as Locale;
+    }
+    
+    // 其次从localStorage获取
     const stored = localStorage.getItem('locale');
     if (stored && locales.includes(stored as Locale)) {
       return stored as Locale;
     }
     
-    // 从浏览器语言检测
+    // 最后从浏览器语言检测
     const browserLang = navigator.language.split('-')[0];
     if (locales.includes(browserLang as Locale)) {
       return browserLang as Locale;

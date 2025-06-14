@@ -9,13 +9,13 @@ export async function generateMetadata(): Promise<Metadata> {
   
   return {
     title: `${t('title')} | InkPress`,
-    description: t('title'),
+    description: t('description'),
   }
 }
 
 export default async function CategoriesPage() {
   const categories = await getAllCategories()
-  const t = await getTranslations('categories')
+  const t = await getTranslations()
   const tCommon = await getTranslations('common')
   const tNav = await getTranslations('navigation')
 
@@ -38,10 +38,10 @@ export default async function CategoriesPage() {
         {/* Page Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {t('title')}
+            {t('categories.title')}
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            浏览所有文章分类，找到您感兴趣的内容
+            {t('categories.description')}
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export default async function CategoriesPage() {
                 
                 {category.latestPost && (
                   <div className="border-t border-gray-100 pt-4">
-                    <p className="text-sm text-gray-500 mb-1">最新文章</p>
+                    <p className="text-sm text-gray-500 mb-1">{t('categories.latestPost')}</p>
                     <p className="text-sm font-medium text-gray-900 line-clamp-1">
                       {category.latestPost.title}
                     </p>
@@ -82,7 +82,7 @@ export default async function CategoriesPage() {
                 )}
                 
                 <div className="mt-4 flex items-center text-blue-600 text-sm font-medium group-hover:text-blue-700">
-                  查看所有文章
+                  {t('categories.viewAllPosts')}
                   <svg className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -99,8 +99,8 @@ export default async function CategoriesPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
               </svg>
             </div>
-            <h3 className="text-lg font-medium text-gray-900 mb-2">暂无分类</h3>
-            <p className="text-gray-500">目前还没有任何文章分类。</p>
+            <h3 className="text-lg font-medium text-gray-900 mb-2">{t('categories.noCategories')}</h3>
+            <p className="text-gray-500">{t('categories.noCategoriesDescription')}</p>
           </div>
         )}
       </div>

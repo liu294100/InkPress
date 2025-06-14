@@ -58,6 +58,11 @@
   },
   "categories": {
     "title": "カテゴリ",
+    "description": "すべての記事カテゴリを閲覧し、興味のあるコンテンツを見つけてください",
+    "latestPost": "最新記事",
+    "viewAllPosts": "すべての記事を見る",
+    "noCategories": "カテゴリなし",
+    "noCategoriesDescription": "まだ記事カテゴリがありません。",
     "tech": "技術",
     "design": "デザイン",
     "life": "ライフスタイル",

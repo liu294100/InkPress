@@ -237,7 +237,8 @@ export async function getCategories(): Promise<Category[]> {
 
   // Convert to category objects
   const categories: Category[] = []
-  for (const [slug, { count }] of categoryMap) {
+  // 使用 Array.from() 将 Map 转换为数组进行迭代
+  for (const [slug, { count }] of Array.from(categoryMap)) {
     categories.push({
       name: getCategoryName(slug),
       slug,
@@ -274,7 +275,7 @@ export async function getAllCategories(): Promise<Array<Category & { latestPost?
 
   // Convert to category objects with latest post
   const categories: Array<Category & { latestPost?: { title: string; date: string } }> = []
-  for (const [slug, { count, posts }] of categoryMap) {
+  for (const [slug, { count, posts }] of Array.from(categoryMap)) {
     // Sort posts by date to get the latest
     const sortedPosts = posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     const latestPost = sortedPosts[0]

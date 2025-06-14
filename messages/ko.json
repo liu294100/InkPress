@@ -58,6 +58,11 @@
   },
   "categories": {
     "title": "카테고리",
+    "description": "모든 게시물 카테고리를 탐색하고 관심 있는 콘텐츠를 찾아보세요",
+    "latestPost": "최신 게시물",
+    "viewAllPosts": "모든 게시물 보기",
+    "noCategories": "카테고리 없음",
+    "noCategoriesDescription": "아직 게시물 카테고리가 없습니다.",
     "tech": "기술",
     "design": "디자인",
     "life": "생활",

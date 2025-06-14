@@ -18,7 +18,7 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
 
   useEffect(() => {
     setCurrentLocale(getUserLocale());
-  }, []);
+  }, [pathname]); // 当路径变化时重新检测语言
 
   const handleLanguageChange = (locale: Locale) => {
     setUserLocale(locale);
