@@ -110,31 +110,53 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
             
             {/* Sort controls */}
             <div className="flex items-center space-x-4">
-              <select
-                value={sortBy}
-                onChange={(e) => {
-                  const url = new URL(window.location.href)
-                  url.searchParams.set('sort', e.target.value)
-                  window.location.href = url.toString()
-                }}
-                className="px-3 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-              >
-                <option value="date">Sort by Date</option>
-                <option value="title">Sort by Title</option>
-              </select>
+              <div className="flex items-center space-x-2">
+                <span className="text-sm text-gray-600">Sort by:</span>
+                <Link
+                  href={`/${params.locale}/category/${params.slug}?sort=date&order=${order}`}
+                  className={`px-3 py-1 text-sm rounded-md ${
+                    sortBy === 'date'
+                      ? 'bg-blue-500 text-white'
+                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  }`}
+                >
+                  Date
+                </Link>
+                <Link
+                  href={`/${params.locale}/category/${params.slug}?sort=title&order=${order}`}
+                  className={`px-3 py-1 text-sm rounded-md ${
+                    sortBy === 'title'
+                      ? 'bg-blue-500 text-white'
+                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  }`}
+                >
+                  Title
+                </Link>
+              </div>
               
-              <select
-                value={order}
-                onChange={(e) => {
-                  const url = new URL(window.location.href)
-                  url.searchParams.set('order', e.target.value)
-                  window.location.href = url.toString()
-                }}
-                className="px-3 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-              >
-                <option value="desc">Newest First</option>
-                <option value="asc">Oldest First</option>
-              </select>
+              <div className="flex items-center space-x-2">
+                <span className="text-sm text-gray-600">Order:</span>
+                <Link
+                  href={`/${params.locale}/category/${params.slug}?sort=${sortBy}&order=desc`}
+                  className={`px-3 py-1 text-sm rounded-md ${
+                    order === 'desc'
+                      ? 'bg-blue-500 text-white'
+                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  }`}
+                >
+                  Newest
+                </Link>
+                <Link
+                  href={`/${params.locale}/category/${params.slug}?sort=${sortBy}&order=asc`}
+                  className={`px-3 py-1 text-sm rounded-md ${
+                    order === 'asc'
+                      ? 'bg-blue-500 text-white'
+                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  }`}
+                >
+                  Oldest
+                </Link>
+              </div>
             </div>
           </div>
         </div>
