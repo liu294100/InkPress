@@ -1,41 +1,16 @@
-const createNextIntlPlugin = require('next-intl/plugin');
-
-const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // App Router handles i18n via [locale] dynamic segments
+  env: {
+    NEXT_PUBLIC_DEFAULT_LOCALE: "zh",
+    NEXT_PUBLIC_SUPPORTED_LOCALES: "zh,en,ja,ko,fr,de,es,ms,th",
+  },
+  // Image optimization config
   images: {
-    domains: ['localhost'],
+    unoptimized: true,
   },
-  // 静态导出配置（可选，用于静态部署）
-  // output: 'export',
-  // trailingSlash: true,
-  
-  // 优化构建
-  swcMinify: true,
-  
-  // 自定义webpack配置
-  webpack: (config, { isServer }) => {
-    // 处理node模块
-    if (!isServer) {
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        fs: false,
-        path: false,
-        'mock-aws-s3': false,
-        'aws-sdk': false,
-        'nock': false,
-      };
-      
-      // 完全排除nodejieba及其依赖在客户端构建
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        'nodejieba': false,
-        '@mapbox/node-pre-gyp': false,
-      };
-    }
-    return config;
-  },
+  // Trailing slash for static hosting compatibility
+  trailingSlash: false,
 };
 
-module.exports = withNextIntl(nextConfig);
+module.exports = nextConfig;

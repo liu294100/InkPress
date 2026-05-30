@@ -1,0 +1,17 @@
+{
+  "id": "programming",
+  "name": {
+    "zh": "编程",
+    "en": "Programming",
+    "ja": "プログラミング",
+    "ko": "프로그래밍",
+    "fr": "Programmation",
+    "de": "Programmierung",
+    "es": "Programación",
+    "ms": "Pengaturcaraan",
+    "th": "การเขียนโปรแกรม"
+  },
+  "icon": "code",
+  "color": "#3B82F6",
+  "order": 1
+}

@@ -1,0 +1,17 @@
+{
+  "id": "history",
+  "name": {
+    "zh": "历史",
+    "en": "History",
+    "ja": "歴史",
+    "ko": "역사",
+    "fr": "Histoire",
+    "de": "Geschichte",
+    "es": "Historia",
+    "ms": "Sejarah",
+    "th": "ประวัติศาสตร์"
+  },
+  "icon": "clock",
+  "color": "#EF4444",
+  "order": 5
+}

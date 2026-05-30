@@ -1,0 +1,17 @@
+{
+  "id": "ai",
+  "name": {
+    "zh": "AI",
+    "en": "AI",
+    "ja": "AI",
+    "ko": "AI",
+    "fr": "IA",
+    "de": "KI",
+    "es": "IA",
+    "ms": "AI",
+    "th": "AI"
+  },
+  "icon": "cpu",
+  "color": "#8B5CF6",
+  "order": 2
+}

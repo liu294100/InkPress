@@ -1,0 +1,114 @@
+import { generateCopyrightNotice, renderSocialLink } from '../../lib/footer';
+import type { SocialLink } from '../../lib/types';
+
+export type { SocialLink };
+
+export interface FooterProps {
+  socialLinks: SocialLink[];
+  year: number;
+  siteName: string;
+}
+
+/**
+ * SVG icons for each social media platform.
+ */
+const platformIcons: Record<SocialLink['platform'], JSX.Element> = {
+  facebook: (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
+      <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+    </svg>
+  ),
+  youtube: (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
+      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+    </svg>
+  ),
+  x: (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  ),
+  instagram: (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+    </svg>
+  ),
+  threads: (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
+      <path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.592 12c.024 3.088.715 5.5 2.053 7.164 1.43 1.783 3.632 2.698 6.542 2.717 2.227-.02 4.03-.6 5.36-1.726 1.164-.99 1.79-2.283 1.79-3.655 0-1.665-.627-2.93-1.865-3.76-.95-.637-2.17-.97-3.63-1.003a7.6 7.6 0 0 0-.47.002c-1.64.074-2.95.566-3.636 1.363-.556.646-.802 1.456-.73 2.41.103 1.39 1.01 2.6 2.42 3.195.913.387 1.955.57 3.095.53 1.513-.052 2.657-.505 3.3-1.306l1.61 1.28c-.947 1.172-2.558 1.82-4.762 1.907h-.02c-1.47.053-2.847-.178-4.094-.688-2.17-.888-3.555-2.699-3.71-4.846-.108-1.455.28-2.74 1.122-3.717 1.078-1.253 2.843-1.955 5.005-2.052a9 9 0 0 1 .617-.003c1.836.042 3.416.473 4.7 1.337 1.87 1.255 2.82 3.183 2.82 5.565 0 2.052-.92 3.886-2.592 5.305-1.716 1.46-4.01 2.213-6.82 2.237z" />
+    </svg>
+  ),
+  wechat: (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
+      <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.32.32 0 0 0 .186-.059l1.875-1.085a.89.89 0 0 1 .63-.081c1.04.27 2.151.413 3.315.413h.572a6.3 6.3 0 0 1-.187-1.515c0-3.726 3.28-6.737 7.337-6.737h.467c-.764-3.458-4.478-6.081-8.57-6.081zm-2.59 4.917a.91.91 0 0 1-.912-.91.91.91 0 0 1 .912-.91.91.91 0 0 1 .911.91.91.91 0 0 1-.911.91zm5.694 0a.91.91 0 0 1-.912-.91.91.91 0 0 1 .912-.91.91.91 0 0 1 .912.91.91.91 0 0 1-.912.91zM24 14.37c0-3.313-3.266-6.007-7.307-6.007-4.04 0-7.307 2.694-7.307 6.007 0 3.312 3.267 6.007 7.307 6.007.825 0 1.62-.117 2.367-.327a.72.72 0 0 1 .504.063l1.48.857a.263.263 0 0 0 .148.047.235.235 0 0 0 .233-.235c0-.058-.023-.115-.038-.17l-.308-1.17a.47.47 0 0 1 .17-.533C23.015 17.89 24 16.228 24 14.37zm-9.918-1.603a.727.727 0 0 1-.728-.727.727.727 0 0 1 .728-.727.73.73 0 0 1 .728.727.728.728 0 0 1-.728.727zm5.222 0a.727.727 0 0 1-.728-.727.727.727 0 0 1 .728-.727.73.73 0 0 1 .728.727.728.728 0 0 1-.728.727z" />
+    </svg>
+  ),
+};
+
+/**
+ * Footer component displaying privacy policy link, social media icons,
+ * and copyright notice.
+ */
+export default function Footer({ socialLinks, year, siteName }: FooterProps) {
+  const copyright = generateCopyrightNotice(year, siteName);
+
+  return (
+    <footer className="w-full border-t border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between sm:items-center">
+          {/* Privacy Policy Link */}
+          <div>
+            <a
+              href="/privacy-policy"
+              className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200"
+            >
+              Privacy Policy
+            </a>
+          </div>
+
+          {/* Social Media Icons */}
+          <div className="flex items-center gap-4">
+            {socialLinks.map((link) => {
+              const icon = platformIcons[link.platform] ?? null;
+              if (!icon) return null;
+
+              const { hasLink, href } = renderSocialLink(link);
+
+              if (hasLink && href) {
+                return (
+                  <a
+                    key={link.platform}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200"
+                    aria-label={link.platform}
+                  >
+                    {icon}
+                  </a>
+                );
+              }
+
+              return (
+                <span
+                  key={link.platform}
+                  className="text-gray-400 dark:text-gray-500 cursor-default"
+                  aria-label={link.platform}
+                >
+                  {icon}
+                </span>
+              );
+            })}
+          </div>
+
+          {/* Copyright Notice */}
+          <div>
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              {copyright}
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}

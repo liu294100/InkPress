@@ -1,0 +1,37 @@
+/* Dark Theme Styles */
+.dark {
+  color-scheme: dark;
+
+  /* Surface colors */
+  --surface-page: #0f172a;
+  --surface-card: #1e293b;
+  --surface-elevated: #1e293b;
+  --surface-overlay: rgb(15 23 42 / 0.9);
+
+  /* Text colors */
+  --text-heading: #f8fafc;
+  --text-body: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-link: #60a5fa;
+  --text-link-hover: #93c5fd;
+
+  /* Border colors */
+  --border-default: #334155;
+  --border-hover: #475569;
+  --border-focus: #60a5fa;
+
+  /* Interactive states */
+  --interactive-bg: #1e293b;
+  --interactive-bg-hover: #334155;
+  --interactive-bg-active: #475569;
+
+  /* Code blocks */
+  --code-bg: #1e293b;
+  --code-border: #334155;
+  --code-text: #e2e8f0;
+
+  /* Scrollbar */
+  --scrollbar-track: #1e293b;
+  --scrollbar-thumb: #475569;
+  --scrollbar-thumb-hover: #64748b;
+}

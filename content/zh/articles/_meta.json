@@ -1,0 +1,17 @@
+{
+  "id": "articles",
+  "name": {
+    "zh": "文章",
+    "en": "Articles",
+    "ja": "記事",
+    "ko": "기사",
+    "fr": "Articles",
+    "de": "Artikel",
+    "es": "Artículos",
+    "ms": "Artikel",
+    "th": "บทความ"
+  },
+  "icon": "file-text",
+  "color": "#F59E0B",
+  "order": 4
+}

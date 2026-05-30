@@ -1,0 +1,29 @@
+{
+  "locale": "en",
+  "documents": [
+    {
+      "id": "programming/getting-started",
+      "title": "Getting Started with Programming",
+      "content": "Getting Started with Programming Programming is the art of writing instructions for computers to follow. Basic Concepts The first step in learning programming is understanding fundamental concepts like variables, loops, and conditionals. Variables Variables are containers for storing data values. Loops Loops allow you to repeat a block of code multiple times. Next Steps Once you master the basics, explore object-oriented programming and data structures.",
+      "category": "programming",
+      "slug": "getting-started",
+      "excerpt": "Getting Started with Programming Programming is the art of writing instructions for computers to follow. Basic Concepts The first step in learning programming is understanding fundamental concepts..."
+    },
+    {
+      "id": "programming/rich-content-demo",
+      "title": "Rich Content Demo",
+      "content": "Rich Content Demo This document demonstrates the various rich content rendering capabilities supported by WebDoc. Math Formulas Inline Math The quadratic formula is , which gives solutions to any equation of the form . Euler's identity states that , connecting five fundamental constants. Block Math The Gaussian integral: A matrix equation: The summation formula for a geometric series: Mermaid Diagrams Flowchart Sequence Diagram DrawIO Diagrams The following is an embedded DrawIO XML diagram: Code Blocks TypeScript Python CSS Summary This document demonstrates: Inline math using syntax Block math using syntax with fractions, integrals, matrices, and summations Mermaid diagrams including flowcharts and sequence diagrams DrawIO XML embedded diagrams Code blocks with syntax highlighting for multiple languages",
+      "category": "programming",
+      "slug": "rich-content-demo",
+      "excerpt": "Rich Content Demo This document demonstrates the various rich content rendering capabilities supported by WebDoc. Math Formulas Inline Math The quadratic formula is , which gives solutions to any..."
+    },
+    {
+      "id": "articles/html-example",
+      "title": "HTML Document Example",
+      "content": "HTML Document Example This is a sample HTML document that demonstrates how HTML content is rendered within the WebDoc site layout. HTML documents allow for more complex custom formatting. Styled Content Note: HTML documents are sanitized for security while preserving legitimate formatting elements. Tables Feature Markdown HTML Custom styling Limited Full control Ease of writing Simple Verbose Complex layouts Not supported Fully supported Lists Ordered List Read the documentation Choose your content format (Markdown or HTML) Create your document with appropriate frontmatter Place it in the correct locale and category directory Unordered List Supports bold and italic text Supports hyperlinks Supports inline code formatting Supports nested elements Blockquote HTML documents provide maximum flexibility for content authors who need precise control over formatting and layout.",
+      "category": "articles",
+      "slug": "html-example",
+      "excerpt": "HTML Document Example This is a sample HTML document that demonstrates how HTML content is rendered within the WebDoc site layout. HTML documents allow for more complex custom formatting. Styled..."
+    }
+  ]
+}

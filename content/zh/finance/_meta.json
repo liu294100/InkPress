@@ -1,0 +1,17 @@
+{
+  "id": "finance",
+  "name": {
+    "zh": "投资理财",
+    "en": "Finance & Investment",
+    "ja": "投資・資産運用",
+    "ko": "투자 및 재테크",
+    "fr": "Finance et investissement",
+    "de": "Finanzen und Investitionen",
+    "es": "Finanzas e inversiones",
+    "ms": "Kewangan dan pelaburan",
+    "th": "การเงินและการลงทุน"
+  },
+  "icon": "trending-up",
+  "color": "#10B981",
+  "order": 3
+}
