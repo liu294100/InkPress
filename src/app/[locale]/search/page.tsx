@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { searchDocuments, truncateQuery } from '@/lib/search-client';
 import { SearchResult } from '@/lib/types';
@@ -11,13 +11,7 @@ interface SearchPageProps {
   params: { locale: string };
 }
 
-/**
- * Search results page.
- * Reads the ?q= parameter to perform a search and display results.
- * Handles empty query, no results, and long query (truncated to 200 chars) states.
- */
-export default function SearchPage({ params }: SearchPageProps) {
-  const { locale } = params;
+function SearchContent({ locale }: { locale: string }) {
   const searchParams = useSearchParams();
   const rawQuery = searchParams.get('q') || '';
   const query = truncateQuery(rawQuery.trim());
@@ -48,12 +42,7 @@ export default function SearchPage({ params }: SearchPageProps) {
   }, [performSearch]);
 
   return (
-    <div className="content-container py-8 max-w-4xl mx-auto px-4">
-      {/* Page header */}
-      <h1 className="text-2xl font-bold text-[rgb(var(--color-text-primary))] mb-6">
-        Search
-      </h1>
-
+    <>
       {/* Search input for refining query */}
       <div className="mb-8">
         <SearchInput
@@ -78,6 +67,28 @@ export default function SearchPage({ params }: SearchPageProps) {
         locale={locale}
         isLoading={isLoading}
       />
+    </>
+  );
+}
+
+/**
+ * Search results page.
+ * Reads the ?q= parameter to perform a search and display results.
+ * Handles empty query, no results, and long query (truncated to 200 chars) states.
+ */
+export default function SearchPage({ params }: SearchPageProps) {
+  const { locale } = params;
+
+  return (
+    <div className="content-container py-8 max-w-4xl mx-auto px-4">
+      {/* Page header */}
+      <h1 className="text-2xl font-bold text-[rgb(var(--color-text-primary))] mb-6">
+        Search
+      </h1>
+
+      <Suspense fallback={<div className="text-[rgb(var(--color-text-secondary))]">Loading...</div>}>
+        <SearchContent locale={locale} />
+      </Suspense>
     </div>
   );
 }
