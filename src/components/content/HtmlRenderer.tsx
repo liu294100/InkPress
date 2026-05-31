@@ -32,9 +32,9 @@ export function HtmlRenderer({ html }: HtmlRendererProps) {
         if (cancelled) return;
 
         const result = DOMPurify.sanitize(html, {
-          ALLOWED_TAGS: [...ALLOWED_TAGS],
-          ALLOWED_ATTR: [...ALLOWED_ATTR],
-          FORBID_TAGS: [...FORBIDDEN_TAGS],
+          ALLOWED_TAGS: Array.from(ALLOWED_TAGS),
+          ALLOWED_ATTR: Array.from(ALLOWED_ATTR),
+          FORBID_TAGS: Array.from(FORBIDDEN_TAGS),
           FORBID_ATTR: [
             'onclick', 'ondblclick', 'onmousedown', 'onmouseup', 'onmouseover',
             'onmousemove', 'onmouseout', 'onkeypress', 'onkeydown', 'onkeyup',
