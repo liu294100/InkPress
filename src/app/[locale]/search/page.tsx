@@ -1,17 +1,15 @@
 'use client';
 
 import { useState, useEffect, useCallback, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useParams } from 'next/navigation';
 import { searchDocuments, truncateQuery } from '@/lib/search-client';
 import { SearchResult } from '@/lib/types';
 import SearchResults from '@/components/search/SearchResults';
 import SearchInput from '@/components/search/SearchInput';
 
-interface SearchPageProps {
-  params: { locale: string };
-}
-
-function SearchContent({ locale }: { locale: string }) {
+function SearchContent() {
+  const params = useParams();
+  const locale = (params?.locale as string) || 'en';
   const searchParams = useSearchParams();
   const rawQuery = searchParams.get('q') || '';
   const query = truncateQuery(rawQuery.trim());
@@ -74,11 +72,9 @@ function SearchContent({ locale }: { locale: string }) {
 /**
  * Search results page.
  * Reads the ?q= parameter to perform a search and display results.
- * Handles empty query, no results, and long query (truncated to 200 chars) states.
+ * Fully client-rendered to avoid prerender issues with useSearchParams in static export.
  */
-export default function SearchPage({ params }: SearchPageProps) {
-  const { locale } = params;
-
+export default function SearchPage() {
   return (
     <div className="content-container py-8 max-w-4xl mx-auto px-4">
       {/* Page header */}
@@ -87,7 +83,7 @@ export default function SearchPage({ params }: SearchPageProps) {
       </h1>
 
       <Suspense fallback={<div className="text-[rgb(var(--color-text-secondary))]">Loading...</div>}>
-        <SearchContent locale={locale} />
+        <SearchContent />
       </Suspense>
     </div>
   );
