@@ -151,15 +151,16 @@ export default function LanguageSwitcher({ currentLocale }: LanguageSwitcherProp
         aria-label="Available languages"
         aria-activedescendant={isOpen ? `lang-option-${currentLocale}` : undefined}
         className={`
-          absolute right-0 z-50 mt-2 w-48
+          md:absolute md:right-0 md:w-48 md:shadow-lg md:origin-top-right
+          relative w-full
+          z-50 mt-2
           rounded-xl overflow-hidden
           bg-[var(--glass-bg)] border border-[var(--glass-border)]
           backdrop-blur-[var(--glass-blur)]
-          shadow-lg
-          transition-all duration-200 ease-in-out origin-top-right
+          transition-all duration-200 ease-in-out
           ${isOpen
-            ? 'opacity-100 scale-100 pointer-events-auto'
-            : 'opacity-0 scale-95 pointer-events-none'
+            ? 'opacity-100 scale-100 pointer-events-auto max-h-[30rem]'
+            : 'opacity-0 scale-95 pointer-events-none max-h-0 border-transparent'
           }
         `}
       >
