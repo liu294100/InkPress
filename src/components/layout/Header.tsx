@@ -72,8 +72,8 @@ export default function Header({
 
         {/* Mobile Menu */}
         <nav
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            mobileMenuOpen ? 'max-h-96 opacity-100 pb-4' : 'max-h-0 opacity-0'
+          className={`md:hidden transition-all duration-300 ease-in-out ${
+            mobileMenuOpen ? 'max-h-[32rem] opacity-100 pb-4' : 'max-h-0 opacity-0 overflow-hidden'
           }`}
           aria-label="Mobile navigation"
           aria-hidden={!mobileMenuOpen}
